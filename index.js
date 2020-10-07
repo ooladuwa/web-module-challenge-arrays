@@ -45,9 +45,9 @@ Use the copy function below to do the following:
     2. Return the new array that holds an exact copy of the old array  
 */
 
-function copy(originalFlavors, copyOriginalFlavors) {
-    copyOriginalFlavors = [...originalFlavors];
-    return copyOriginalFlavors;
+function copy(arr) {
+     return [...arr];
+    
 }
 
 
@@ -97,11 +97,11 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(originalFlavors) {
+function removeLastFlavor(arr) {
     originalFlavors.pop();
     return originalFlavors;
 }
-
+removeLastFlavor(originalFlavors)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -113,11 +113,11 @@ Use the getFlavorByIndex function below to do the following:
 
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
-function getFlavorByIndex(originalFlavors, index){
-    return originalFlavors[index];
+function getFlavorByIndex(arr, index){
+    return arr[index];
     
 }
-
+getFlavorByIndex(originalFlavors, 2);
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
 as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
@@ -132,8 +132,8 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/) {
-	/*your code here*/
+function removeFlavorByName(arr, index) {
+    return originalFlavors.splice(index);
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -155,10 +155,16 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/) {
-	/*your code here*/
+function filterByWord(arr, type) {
+    let newarr =[];
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i].includes(type)){
+            newarr.push(arr[i]);
+        }
+    }
+    return newarr;
 }
-
+filterByWord(originalFlavors, "Lemon")
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
