@@ -46,11 +46,8 @@ Use the copy function below to do the following:
 */
 
 function copy(arr) {
-     return [...arr];
-    
+	return [...arr];
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Confirm that an array is exactly 31 flavors. Your function should accept:
@@ -82,9 +79,9 @@ Use the addFlavor function below to do the following:
     For example: addFlavor("Rainbow Sherbert", originalFlavors) should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-function addFlavor() {
-    originalFlavors.unshift("Rainbow Sherbert");
-    return originalFlavors;
+function addFlavor(arr, flavor) {
+	arr.unshift(flavor);
+	return arr;
 }
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -98,11 +95,10 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(arr) {
-    originalFlavors.pop();
-    return originalFlavors;
+	arr.pop();
+	return arr;
 }
-removeLastFlavor(originalFlavors)
-
+removeLastFlavor(originalFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -113,9 +109,8 @@ Use the getFlavorByIndex function below to do the following:
 
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
-function getFlavorByIndex(arr, index){
-    return arr[index];
-    
+function getFlavorByIndex(arr, index) {
+	return arr[index];
 }
 getFlavorByIndex(originalFlavors, 2);
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -131,10 +126,23 @@ Use the removeFlavorByName function below to do the following:
 
     HINT: You can use .splice() for this
 */
-
-function removeFlavorByName(arr, index) {
-    return originalFlavors.splice(index);
+function removeFlavorByName(arr, flavor){
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i] === (flavor)){
+            arr.splice(i,1);
+        }
+    } return arr;
 }
+// removeFlavorByName(originalFlavors, "Rocky Road");
+
+// function removeFlavorByName(arr, flavor) {
+// 	arr = arr.splice(arr.indexOf(flavor), 1);
+ 
+// 	return arr;
+// }
+// removeFlavorByName(originalFlavors, "Rocky Road");
+// console.log(removeFlavcorByName(originalFlavors, "Vanilla"));
+// console.log(originalFlavors);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -156,15 +164,15 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(arr, type) {
-    let newarr =[];
-    for(let i = 0; i < arr.length; i++){
-        if (arr[i].includes(type)){
-            newarr.push(arr[i]);
-        }
-    }
-    return newarr;
+	let newarr = [];
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i].includes(type)) {
+			newarr.push(arr[i]);
+		}
+	}
+	return newarr;
 }
-filterByWord(originalFlavors, "Lemon")
+filterByWord(originalFlavors, "Lemon");
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
@@ -193,7 +201,7 @@ Use the getRandomFlavors function and new arrays below to do the following:
     For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-function getRandomFlavors(/*code here*/) {
+function getRandomFlavors(arr1, arr2, arr3, arr4) {
 	/*code here*/
 }
 
